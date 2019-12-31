@@ -1,18 +1,24 @@
-# Terminal
-A menu system used in [code:CADET](https://techahoy.org/code-cadet) to encourage students to interact with the command line interface.
+# CCTerminal
+A terminal based menu system for [code:Cadet](https://techahoy.org/code-cadet) students
 
 ## Description
-TBD
+CCTerminal was designed to encourage code:Cadet students to interact with the command line interface.  
+Students can perform a number of tasks such as:  
+- Check their TechAhoy Coin (gear) balance  
+- Transfer gear to fellow students
+- Complete daily challenges that involve coding, puzzles, and general problem solving
 
 ## Requirements
-The conf file should be stored in **/etc/default/** with the following format:  
-```
-#!/bin/bash
-PGPASSWD=<psql password>
-GUSER=<psql user>
-GHOST=<psql host>
-GTABLE=<table>
-```
+- [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) database  
+- A configuration file, **ccterminal.conf** saved in **/etc/default/** with the following format:  
+  ```
+  #!/bin/bash
+  PGPASSWD=<psql password>
+  GUSER=<psql user>
+  GHOST=<psql host>
+  GTABLE=<table>
+  ```
 
 ## Installation
-1. lorum
+1. Copy the repository  
+  ```git clone https://github.com/techahoynyc/CCTerminal```
