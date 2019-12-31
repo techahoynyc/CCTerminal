@@ -1,5 +1,5 @@
 #!/bin/bash
-source /etc/default/techahoy-terminal.conf
+source /etc/default/ccterminal.conf
 export $PGPASSWORD
 function getBalance(){ gear=$(psql -h $GHOST -U $GUSER -d $GTABLE -t -c "SELECT gear FROM users WHERE username='$1'");}
 function getUsers(){ users=$(psql -h $GHOST -U $GUSER -d $GTABLE -t -c "SELECT username FROM users");}
@@ -8,7 +8,7 @@ function transferGear(){
   $(psql -h $GHOST -U $GUSER -d $GTABLE -t -c "UPDATE users SET gear = gear + $2 WHERE username = '$1'");
 }
 function verifyUser(){ userFound=$(psql -h $GHOST -U $GUSER -d $GTABLE -t -c "SELECT count(username) from users WHERE username='$1'");}
-function awardFreeGear(){
+function awardGear(){
   result=$(psql -h $GHOST -U $GUSER -d $GTABLE -t -c "UPDATE users SET gear = gear + $2 WHERE username = '$1'");
 }
 
@@ -186,7 +186,7 @@ function freeGear(){
   echo ""
   echo "Login again tomorrow for more free gear!"
   echo ""
-  awardFreeGear $USER $freeAmt
+  awardGear $USER $freeAmt
   echo "-------------------------------"
   read -n 1 -p "Press any key to check your current balance..."
   displayBalance
