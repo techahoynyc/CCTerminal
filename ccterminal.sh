@@ -1,6 +1,6 @@
 #!/bin/bash
 source /etc/default/ccterminal.conf
-export $PGPASSWORD
+export PGPASSWORD=$PGPASSWD
 function getBalance(){ gear=$(psql -h $GHOST -U $GUSER -d $GTABLE -t -c "SELECT gear FROM users WHERE username='$1'");}
 function getUsers(){ users=$(psql -h $GHOST -U $GUSER -d $GTABLE -t -c "SELECT username FROM users");}
 function transferGear(){
