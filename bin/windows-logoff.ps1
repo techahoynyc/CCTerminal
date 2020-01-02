@@ -9,7 +9,8 @@ $conn.Open("PostgreSQL35W")
 #IAN FIX THIS CONNECTION
 $recordset = $conn.Execute("SELECT * FROM TimeBalances WHERE username = $currentUser")
 while ($recordset.EOF -ne $True) {
-$loginTime = #On the login script connect to the database and set this value in the database as get-date
+$loginTime = Get-WmiObject win32_networkloginprofile | ? {$_.lastlogon -ne $null} | % {[PSCustomObject]@{User=$_.caption; LastLogon=[Management.ManagementDateTimeConverter]::ToDateTime($_.lastlogon)}}
+
 $userFriendlyName = #The person's first name
 $currentBalance = #How much time this person has in the bank in minutes
 }
