@@ -9,6 +9,7 @@ Students can perform a number of tasks such as:
 - Complete daily challenges that involve coding, puzzles, and general problem solving
 
 ## Requirements
+- RasperryPi or other Linux based OS
 - [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) database  
 - A configuration file, **ccterminal.conf** saved in **/etc/default/** with the following format:  
   ```
@@ -20,5 +21,4 @@ Students can perform a number of tasks such as:
   ```
 
 ## Installation
-1. Copy the repository  
-  ```git clone https://github.com/techahoynyc/CCTerminal```
+1. Copy the repository with the following command `git clone https://github.com/techahoynyc/CCTerminal`
