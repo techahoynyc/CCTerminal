@@ -55,7 +55,7 @@ while (1) {
 
           if ($(get-date) -gt $totalTime) { #You outta time - time to logoff
             $str = "logoff"
-            #Invoke-Expression $str
+            Invoke-Expression $str
           } elseif ($(($totalTime - $(get-date)).Minutes) -lt 5) {
             #Give a warning
             $wshell = New-Object -ComObject Wscript.Shell
