@@ -34,6 +34,7 @@ app.engine('.hbs', exphbs({extname: '.hbs'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+logger.info('Starting CCTerminal-logger...')
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
