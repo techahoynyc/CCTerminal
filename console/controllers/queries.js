@@ -13,7 +13,7 @@ const pool = new Pool({
 })
 
 exports.getHome = function(req, res) {
-  logger.info("querying db")
+  logger.info('Starting CCTerminal-logger...')
   const qbid = parseInt(req.params.qbid)
   var ip = 0
   pool.query('SELECT * from users', (error, results) => {
@@ -22,6 +22,6 @@ exports.getHome = function(req, res) {
     }
     var data = results.rows;
     console.log(data);
-    res.render('main.hbs', {users: data} );
+    res.render('main2.hbs', {users: data} );
   });
 };
