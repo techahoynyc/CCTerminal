@@ -12,8 +12,9 @@ const pool = new Pool({
   port: process.env.DATABASE_PORT,
 })
 
+
 exports.getHome = function(req, res) {
-  logger.info('Starting CCTerminal-logger...')
+  logger.info('querying home')
   const qbid = parseInt(req.params.qbid)
   var ip = 0
   pool.query('SELECT * from users', (error, results) => {
