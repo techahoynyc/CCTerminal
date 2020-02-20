@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+'use strict';
+// question routes
+module.exports = function(app) {
+  var db = require('../controllers/queries');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Express' });
-});
+  app.route('/')
+   .get(db.getHome);
 
-module.exports = router;
+};
