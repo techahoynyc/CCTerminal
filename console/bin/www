@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../gear');
+var app = require('../app');
 var debug = require('debug')('gear:server');
 var http = require('http');
 
