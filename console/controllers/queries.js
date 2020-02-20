@@ -13,6 +13,7 @@ const pool = new Pool({
 })
 
 exports.getHome = function(req, res) {
+  logger.info("querying db")
   const qbid = parseInt(req.params.qbid)
   var ip = 0
   pool.query('SELECT * from users', (error, results) => {
