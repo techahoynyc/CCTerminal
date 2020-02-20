@@ -3,7 +3,27 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const { loggers, transports ,format} = require('winston');
+loggers.add('ccterminal-logger', {
+  level: 'info',
+  format: format.combine(
+    format.colorize(),
+    format.timestamp(),
+    format.align(),
+    format.printf(
+      info => `${info.timestamp} ${info.level}: ${info.message}`,
+    ),
+  ),
+  transports: [
+    new transports.File({
+      filename: './logs/console.log',
+      datePattern: 'YYYY-MM-DD',
+      level: 'info',
+    }),
+  ]
+});
+
+const logger = loggers.get('ccterminal-logger')
 
 var indexRouter = require('./routes/index');
 
@@ -14,7 +34,6 @@ app.engine('.hbs', exphbs({extname: '.hbs'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
