@@ -44,3 +44,8 @@ Thumbs.db
 *.elf
 *.hex
 *.conf
+
+# Node #
+########
+node_modules/
+*.env
