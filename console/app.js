@@ -25,7 +25,9 @@ loggers.add('ccterminal-logger', {
 
 const logger = loggers.get('ccterminal-logger')
 
-var indexRouter = require('./routes/index');
+//var indexRouter = require('./routes/index');
+var routes = require('./routes/index.js');
+routes(app);
 
 var app = express();
 
