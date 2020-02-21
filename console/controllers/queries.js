@@ -12,7 +12,7 @@ const pool = new Pool({
   port: process.env.DATABASE_PORT,
 })
 
-exports.getHome2 = function(req, res) {
+exports.getHome = function(req, res) {
   logger.info('querying home')
   logger.info(`password:${password}`)
   var ip = 0
@@ -21,7 +21,9 @@ exports.getHome2 = function(req, res) {
       logger.error(error)
     }
     var data = results.rows;
+    var firstname = results.rows[0].username
+    logger.info(`firstusername: ${firstname}`)
     console.log(data);
-    res.render('woops.hbs', {users: data} );
+    res.render('main.hbs', {users: data} );
   });
 };
