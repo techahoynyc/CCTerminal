@@ -25,12 +25,13 @@ exports.getHome = function(req, res) {
 };
 
 exports.awardG = function(req, res){
-  for(var key in req.body){
-    if(key > 0){
-        logger.info(req.body[key])
-    }
-
+  for (var key in req.body) {
+  if (req.body.hasOwnProperty(key)) {
+    let value = req.body[key];
+    logger.info( `value for ${key} is ${value}` )
   }
+}
+
   /*pool.query'(UPDATE users SET gear = gear + $2 WHERE uid = $1',[uid, gear], (error, results) => {
     if(error){
       logger.error(error)
