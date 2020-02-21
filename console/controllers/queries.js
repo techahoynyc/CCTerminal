@@ -28,17 +28,13 @@ exports.awardG = function(req, res){
   for (var key in req.body) {
     let value = req.body[key];
     if(value){
-        logger.info( `value for ${key} is ${value}` )
+      pool.query'(UPDATE users SET gear = gear + $2 WHERE uid = $1',[key, value], (error, results) => {
+        if(error){
+          logger.error(error)
+        }
+        logger.info(`Awarded ${value} gear to uid ${key}`)
+      })
     }
-
   }
-
-
-  /*pool.query'(UPDATE users SET gear = gear + $2 WHERE uid = $1',[uid, gear], (error, results) => {
-    if(error){
-      logger.error(error)
-    }
-    logger.info(`Awarded ${gear} gear to uid ${uid}`)
-  })*/
   res.redirect('/')
 };
