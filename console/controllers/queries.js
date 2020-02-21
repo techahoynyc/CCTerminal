@@ -27,7 +27,10 @@ exports.getHome = function(req, res) {
 exports.awardG = function(req, res){
   for (var key in req.body) {
     let value = req.body[key];
-    logger.info( `value for ${key} is ${value}` )
+    if(value > 0){
+        logger.info( `value for ${key} is ${value}` )
+    }
+
   }
 
 
