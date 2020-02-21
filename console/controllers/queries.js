@@ -12,7 +12,7 @@ const pool = new Pool({
   port: process.env.DATABASE_PORT,
 })
 
-logger.info('password:${password}')
+logger.info(`password:${password}`)
 
 
 exports.getHome = function(req, res) {
