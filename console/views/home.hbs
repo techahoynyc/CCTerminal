@@ -1,2 +1,20 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h2 align="center">{{title}}</h2>
+
+<table>
+  <tr>
+    <th align="center">User</th>
+    <th>Gear</th>
+    <th>Freetime Remaining</th>
+    <th>Last Freetime Check</th>
+  </tr>
+  {{#if userList}}
+  {{#each userList}}
+    <tr>
+      <td> {{this.username}} </td>
+      <td> {{this.gear}} </td>
+      <td> {{this.freetimegearbal}} </td>
+      <td> {{this.lastgearbalupdate}} </td>
+    </tr>
+  {{/each}}
+  {{else}} Error: No users{{/if}}
+</table>

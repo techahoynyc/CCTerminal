@@ -1,50 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-tr:nth-child(even) {
-  background-color: #add8e6;
-}
-tr:nth-child(odd) {
-  background-color: #e6bbad;
-}
-tr:nth-child(1) {
-  background-color: #dddddd;
-}
-</style>
-</head>
-<body>
-
-<h2 align="center">{{title}}</h2>
-
-<table>
-  <tr>
-    <th align="center">User</th>
-    <th>Gear</th>
-    <th>Freetime Remaining</th>
-    <th>Last Freetime Check</th>
-  </tr>
-  {{#if userList}}
-  {{#each userList}}
-    <tr>
-      <td> {{this.username}} </td>
-      <td> {{this.gear}} </td>
-      <td> {{this.freetimegearbal}} </td>
-      <td> {{this.lastgearbalupdate}} </td>
-    </tr>
-  {{/each}}
-  {{else}} Error: No users{{/if}}
-</table>
-
-</body>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      tr:nth-child(even) {
+        background-color: #add8e6;
+      }
+      tr:nth-child(odd) {
+        background-color: #e6bbad;
+      }
+      tr:nth-child(1) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    {{{body}}}
+  </body>
 </html>
