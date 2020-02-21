@@ -22,6 +22,6 @@ exports.getHome = function(req, res) {
     }
     var data = results.rows;
     console.log(data);
-    res.render('main2.hbs', {users: data} );
+    res.render('woops.hbs', {users: data} );
   });
 };
