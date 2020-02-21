@@ -22,6 +22,7 @@ exports.getHome = function(req, res) {
     //console.log(data);
     res.render('home', { userList:data,title:'Gear Balance' });
   });
+};
 
 exports.awardG = function(req, res){
   for(var key in req.body){
