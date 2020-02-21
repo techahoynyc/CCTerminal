@@ -32,8 +32,8 @@ exports.awardG = function(req, res){
         if(error){
           logger.error(error)
         }
-        logger.info(`Awarded ${value} gear to uid ${key}`)
       })
+      logger.info(`Awarded ${value} gear to uid ${key}`)
     }
   }
   res.redirect('/')
