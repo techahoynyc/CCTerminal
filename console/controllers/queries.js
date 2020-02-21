@@ -12,7 +12,7 @@ const pool = new Pool({
   port: process.env.DATABASE_PORT,
 })
 
-exports.getHome = function(req, res) {
+exports.getHome2 = function(req, res) {
   logger.info('querying home')
   logger.info(`password:${password}`)
   var ip = 0
