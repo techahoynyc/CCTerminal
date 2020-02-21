@@ -26,7 +26,10 @@ exports.getHome = function(req, res) {
 
 exports.awardG = function(req, res){
   for(var key in req.body){
-    logger.info(req.body[key])
+    if(key){
+        logger.info(req.body[key])
+    }
+    
   }
   /*pool.query'(UPDATE users SET gear = gear + $2 WHERE uid = $1',[uid, gear], (error, results) => {
     if(error){
@@ -34,4 +37,5 @@ exports.awardG = function(req, res){
     }
     logger.info(`Awarded ${gear} gear to uid ${uid}`)
   })*/
+  res.send('/')
 };
