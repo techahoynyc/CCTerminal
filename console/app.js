@@ -31,7 +31,7 @@ const logger = loggers.get('ccterminal-logger')
 var app = express();
 
 // view engine setup
-app.engine('.hbs', exphbs({extname: '.hbs'}));
+app.engine('hbs', exphbs({extname: '.hbs'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
