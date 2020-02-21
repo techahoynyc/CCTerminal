@@ -13,7 +13,7 @@ const pool = new Pool({
 })
 
 exports.getHome = function(req, res) {
-  logger.info('querying home')
+  logger.info('querying home2')
   logger.info(`password:${password}`)
   var ip = 0
   pool.query('SELECT * from users', (error, results) => {
