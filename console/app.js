@@ -17,7 +17,7 @@ loggers.add('ccterminal-logger', {
   ),
   transports: [
     new transports.File({
-      filename: './logs/console.log',
+      filename: './logs/ccterminal-console.log',
       datePattern: 'YYYY-MM-DD',
       level: 'info',
     }),

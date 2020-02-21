@@ -1,4 +1,4 @@
-<h2 align="center">{{title}}</h2>
+<h2 align="left">Gear Balance</h2>
 
 <table>
   <tr>
@@ -17,4 +17,23 @@
     </tr>
   {{/each}}
   {{else}} Error: No users{{/if}}
+</table>
+
+<h2 align="left">{{title2}}</h2>
+
+<table>
+  <tr>
+    <th align="center">Award Gear</th>
+    <th>User</th>
+    <th>Current Balance</th>
+    <th>Award</th>
+  </tr>
+  {{#if userList}}
+  {{#each userList}}
+    <tr>
+      <td> {{this.username}} </td>
+      <td> {{this.gear}} </td>
+      <td> </td>
+    </tr>
+  {{/each}}
 </table>

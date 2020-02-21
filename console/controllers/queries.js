@@ -13,15 +13,13 @@ const pool = new Pool({
 })
 
 exports.getHome = function(req, res) {
-  logger.info(`Querying users...`)
-  pool.query('SELECT * from users', (error, results) => {
+  pool.query('SELECT * from users ORDER BY username ASC', (error, results) => {
     if (error) {
       logger.error(error)
     }
     var data = results.rows;
     var firstname = results.rows[0].username
-    console.log(data);
-    console.log(firstname)
-    res.render('home', { userList:data,title:'Users' });
+    //console.log(data);
+    res.render('home', { userList:data,title:'Gear Balance' });
   });
 };
