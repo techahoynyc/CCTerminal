@@ -34,13 +34,13 @@ tr:nth-child(1) {
     <th>Freetime Remaining</th>
     <th>Last Freetime Check</th>
   </tr>
-  {{#if users}}
-  {{#each users}}
+  {{#if userList}}
+  {{#each userList}}
     <tr>
-      <td> {{username}} </td>
-      <td> {{gear}} </td>
-      <td> {{freetimegearbal}} </td>
-      <td> {{lastgearbalupdate}} </td>
+      <td> {{this.username}} </td>
+      <td> {{this.gear}} </td>
+      <td> {{this.freetimegearbal}} </td>
+      <td> {{this.lastgearbalupdate}} </td>
     </tr>
   {{/each}}
   {{else}} Error: No users{{/if}}

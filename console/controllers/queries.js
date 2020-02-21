@@ -13,17 +13,13 @@ const pool = new Pool({
 })
 
 exports.getHome = function(req, res) {
-  logger.info(`inside getHome`)
-  logger.info(`password ${process.env.DATABASE_PASSWORD}`)
+  logger.info(`Querying users...`)
   pool.query('SELECT * from users', (error, results) => {
     if (error) {
       logger.error(error)
     }
     var data = results.rows;
-    var firstname = results.rows[0].username
-    logger.info(`firstusername: ${firstname}`)
     console.log(data);
-    logger.info('redirecting')
-    res.render('main.hbs', {users: data} );
+    res.render('main.hbs', {userList: data} );
   });
 };
