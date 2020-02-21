@@ -22,4 +22,15 @@ exports.getHome = function(req, res) {
     //console.log(data);
     res.render('home', { userList:data,title:'Gear Balance' });
   });
+
+exports.awardG = function(req, res){
+  for(var key in req.body){
+    logger.info(req.body[key])
+  }
+  /*pool.query'(UPDATE users SET gear = gear + $2 WHERE uid = $1',[uid, gear], (error, results) => {
+    if(error){
+      logger.error(error)
+    }
+    logger.info(`Awarded ${gear} gear to uid ${uid}`)
+  })*/
 };
