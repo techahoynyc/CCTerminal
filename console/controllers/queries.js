@@ -12,10 +12,11 @@ const pool = new Pool({
   port: process.env.DATABASE_PORT,
 })
 
+logger.info('password:${password}')
+
 
 exports.getHome = function(req, res) {
   logger.info('querying home')
-  const qbid = parseInt(req.params.qbid)
   var ip = 0
   pool.query('SELECT * from users', (error, results) => {
     if (error) {

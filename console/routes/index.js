@@ -1,5 +1,6 @@
 'use strict';
-// question routes
+// routes/index.js
+
 module.exports = function(app) {
   var db = require('../controllers/queries');
 
