@@ -14,7 +14,6 @@ const pool = new Pool({
 
 exports.getHome = function(req, res) {
   logger.info('querying home2')
-  logger.info(`password:${password}`)
   var ip = 0
   pool.query('SELECT * from users', (error, results) => {
     if (error) {
@@ -24,6 +23,7 @@ exports.getHome = function(req, res) {
     var firstname = results.rows[0].username
     logger.info(`firstusername: ${firstname}`)
     console.log(data);
+    logger.info('redirecting')
     res.render('main.hbs', {users: data} );
   });
 };
