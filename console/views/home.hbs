@@ -19,11 +19,10 @@
   {{else}} Error: No users{{/if}}
 </table>
 
-<h2 align="left">{{title2}}</h2>
-
+<h2 align="left">Award Gear</h2>
+<form>
 <table>
   <tr>
-    <th align="center">Award Gear</th>
     <th>User</th>
     <th>Current Balance</th>
     <th>Award</th>
@@ -33,7 +32,9 @@
     <tr>
       <td> {{this.username}} </td>
       <td> {{this.gear}} </td>
-      <td> </td>
+      <td> <input type="number" id="awardg_{{this.uid}}" name="awardg_{{this.uid}}"> </td>
     </tr>
   {{/each}}{{/if}}
 </table>
+<input type="submit" value="Award">
+</form>
