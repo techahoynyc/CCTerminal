@@ -21,6 +21,7 @@ exports.getHome = function(req, res) {
     var data = results.rows;
     var firstname = results.rows[0].username
     console.log(data);
-    res.render('main2.hbs', { userList:data,title:firstname });
+    console.log(firstname)
+    res.render('main2.hbs', { title:firstname });
   });
 };
