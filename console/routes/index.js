@@ -7,4 +7,7 @@ module.exports = function(app) {
   app.route('/')
    .get(db.getHome);
 
+   app.route('/awardG')
+     .post(db.awardG);
+
 };
