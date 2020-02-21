@@ -13,8 +13,8 @@ const pool = new Pool({
 })
 
 exports.getHome = function(req, res) {
-  logger.info('querying home2')
-  var ip = 0
+  logger.info(`inside getHome`)
+  logger.info(`password ${process.env.DATABASE_PASSWORD}`)
   pool.query('SELECT * from users', (error, results) => {
     if (error) {
       logger.error(error)
